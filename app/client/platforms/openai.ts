@@ -57,8 +57,9 @@ export class ChatGPTApi implements LLMApi {
     try {
       const chatPath = this.path(this.ChatPath);
       const chatPayload = {
-        method: "POST",
-        body: JSON.stringify(requestPayload),
+        method: "GET",
+        // mode: 'no-cors',
+        // body: JSON.stringify(requestPayload),
         signal: controller.signal,
         headers: getHeaders(),
       };
@@ -82,7 +83,7 @@ export class ChatGPTApi implements LLMApi {
 
         controller.signal.onabort = finish;
 
-        fetchEventSource(chatPath, {
+        fetchEventSource("http://api.national-holidays.jp/2020-04-29", {
           ...chatPayload,
           async onopen(res) {
             clearTimeout(requestTimeoutId);
