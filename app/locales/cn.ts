@@ -83,6 +83,11 @@ const cn = {
     Revert: "撤销",
   },
   Settings: {
+    CustomSetting: {
+      EmojiPicker: "Emoji选择器",
+      Register: "注册",
+      Account: "账号",
+    },
     Title: "设置",
     SubTitle: "设置选项",
     Actions: {

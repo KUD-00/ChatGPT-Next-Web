@@ -85,6 +85,11 @@ const en: RequiredLocaleType = {
     Revert: "Revert",
   },
   Settings: {
+    CustomSetting: {
+      EmojiPicker: "Emoji Picker",
+      Register: "Register",
+      Account: "Account",
+    },
     Title: "Settings",
     SubTitle: "All Settings",
     Actions: {
