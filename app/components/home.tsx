@@ -54,6 +54,10 @@ const MaskPage = dynamic(async () => (await import("./mask")).MaskPage, {
   loading: () => <Loading noLogo />,
 });
 
+const Register = dynamic(async () => (await import("./register")).Register, {
+  loading: () => <Loading noLogo />,
+});
+
 export function useSwitchTheme() {
   const config = useAppConfig();
 
@@ -141,6 +145,7 @@ function Screen() {
               <Route path={Path.Chat} element={<Chat />} />
               <Route path={Path.Settings} element={<Settings />} />
               <Route path={Path.CustomSettings} element={<CustomSettings />} />
+              <Route path={Path.Register} element={<Register />} />
             </Routes>
           </div>
         </>

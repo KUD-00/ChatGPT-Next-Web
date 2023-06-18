@@ -96,6 +96,7 @@ const cn = {
       Close: "关闭",
       ConfirmResetAll: "确认重置所有配置？",
       ConfirmClearAll: "确认清除所有数据？",
+      Return: "返回",
     },
     Lang: {
       Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
