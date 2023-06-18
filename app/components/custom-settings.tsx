@@ -333,6 +333,13 @@ export function CustomSettings() {
       </div>
       <div className={styles["settings"]}>
         <List>
+
+          <ListItem title={Locale.Settings.CustomSetting.Register}>
+            <div style={{ width: '90%', height: '100%' }} onClick={() => navigate(Path.Home)}>
+               &nbsp;
+            </div>
+          </ListItem>
+
           <ListItem title={Locale.Settings.CustomSetting.Account}>
             <div>
               <input
