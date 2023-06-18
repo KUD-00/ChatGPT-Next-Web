@@ -45,6 +45,7 @@ import { ErrorBoundary } from "./error";
 import { InputRange } from "./input-range";
 import { useNavigate } from "react-router-dom";
 import { Avatar, AvatarPicker } from "./emoji";
+import { access } from "fs";
 
 function EditPromptModal(props: { id: number; onClose: () => void }) {
   const promptStore = usePromptStore();
@@ -335,7 +336,16 @@ export function CustomSettings() {
         <List>
 
           <ListItem title={Locale.Settings.CustomSetting.Register}>
-            <div style={{ width: '90%', height: '100%' }} onClick={() => navigate(Path.Home)}>
+            <div style={{ width: '90%', height: '100%' }} onClick={() => navigate(Path.Register)}>
+               &nbsp;
+            </div>
+          </ListItem>
+
+          <ListItem title={Locale.Settings.CustomSetting.Logout}>
+            <div style={{ width: '90%', height: '100%' }}
+                 onClick={() => {
+                   accessStore.updateCode("")
+                   navigate(Path.Register)}}>
                &nbsp;
             </div>
           </ListItem>

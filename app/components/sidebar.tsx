@@ -168,11 +168,14 @@ export function SideBar(props: { className?: string }) {
               }}
             />
           </div>
-          <div className={styles["sidebar-action"]}>
-            <Link to={Path.CustomSettings}>
-              <IconButton icon={<SettingsIcon />} shadow />
-            </Link>
-          </div>
+          <IconButton
+            icon={<SettingsIcon />}
+            text={shouldNarrow ? undefined : Locale.Settings.Title}
+            onClick={() => {
+              navigate(Path.CustomSettings)
+            }}
+            shadow
+          />
         </div>
         <div>
           <IconButton

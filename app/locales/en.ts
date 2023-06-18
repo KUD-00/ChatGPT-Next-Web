@@ -89,6 +89,7 @@ const en: RequiredLocaleType = {
       EmojiPicker: "Emoji Picker",
       Register: "Register",
       Account: "Account",
+      Logout: "Log Out",
     },
     Title: "Settings",
     SubTitle: "All Settings",

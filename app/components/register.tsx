@@ -303,7 +303,7 @@ export function Register() {
             <IconButton
               icon={<ReturnIcon />}
               onClick={() => {
-                  navigate(Path.Home)
+                  navigate(Path.CustomSettings)
               }}
               bordered
               title={Locale.Settings.Actions.Return}

@@ -87,6 +87,7 @@ const cn = {
       EmojiPicker: "Emoji选择器",
       Register: "注册",
       Account: "账号",
+      Logout: "注销",
     },
     Title: "设置",
     SubTitle: "设置选项",
