@@ -14,6 +14,14 @@ export function AuthPage() {
 
   const goHome = () => navigate(Path.Home);
 
+  const handleConfirmClick = () => {
+    const accountValue = document.getElementById('account').value;
+    const passwordValue = document.getElementById('password').value;
+    access.updateAccount(accountValue);
+    access.updatePassword(passwordValue);
+    goHome();
+  }
+
   return (
     <div className={styles["auth-page"]}>
       <div className={`no-dark ${styles["auth-logo"]}`}>
@@ -24,20 +32,24 @@ export function AuthPage() {
       <div className={styles["auth-tips"]}>{Locale.Auth.Tips}</div>
 
       <input
+        id="account"
         className={styles["auth-input"]}
         type="text"
-        placeholder={Locale.Auth.Input}
-        value={access.accessCode}
-        onChange={(e) => {
-          access.updateCode(e.currentTarget.value);
-        }}
+        placeholder={Locale.Auth.Account}
+      />
+
+      <input
+        id="password"
+        className={styles["auth-input"]}
+        type="text"
+        placeholder={Locale.Auth.Password}
       />
 
       <div className={styles["auth-actions"]}>
         <IconButton
           text={Locale.Auth.Confirm}
           type="primary"
-          onClick={goHome}
+          onClick={handleConfirmClick}
         />
         <IconButton text={Locale.Auth.Later} onClick={goHome} />
       </div>

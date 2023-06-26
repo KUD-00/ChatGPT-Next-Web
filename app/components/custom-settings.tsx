@@ -334,7 +334,6 @@ export function CustomSettings() {
       </div>
       <div className={styles["settings"]}>
         <List>
-
           <ListItem title={Locale.Settings.CustomSetting.Register}>
             <div style={{ width: '90%', height: '100%' }} onClick={() => navigate(Path.Register)}>
                &nbsp;
@@ -344,25 +343,16 @@ export function CustomSettings() {
           <ListItem title={Locale.Settings.CustomSetting.Logout}>
             <div style={{ width: '90%', height: '100%' }}
                  onClick={() => {
-                   accessStore.updateCode("")
-                   navigate(Path.Register)}}>
+                   accessStore.updateAccount("")
+                   accessStore.updatePassword("")
+                   navigate(Path.Home)}}>
                &nbsp;
             </div>
           </ListItem>
 
           <ListItem title={Locale.Settings.CustomSetting.Account}>
             <div>
-              <input
-                type="text"
-                style={{ width: '300px' }}
-                placeholder={config.account}
-                onChange={(e) =>
-                  updateConfig(
-                    (config) =>
-                    (config.account = e.currentTarget.value),
-                  )
-                }
-              ></input>
+              {accessStore.account}
             </div>
           </ListItem>
 

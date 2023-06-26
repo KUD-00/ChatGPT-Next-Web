@@ -292,11 +292,13 @@ export function Register() {
       <div className="window-header">
         <div className="window-header-title">
           <div className="window-header-main-title">
-            {Locale.Settings.Title}
+            {Locale.Settings.CustomSetting.Register}
           </div>
-          <div className="window-header-sub-title">
+          {/*
+            <div className="window-header-sub-title">
             {Locale.Settings.SubTitle}
           </div>
+           */}
         </div>
         <div className="window-actions">
           <div className="window-action-button">
@@ -345,14 +347,37 @@ export function Register() {
       </div>
       <div className={styles["settings"]}>
         <List>
-          <ModelConfigList
-            modelConfig={config.modelConfig}
-            updateConfig={(updater) => {
-              const modelConfig = { ...config.modelConfig };
-              updater(modelConfig);
-              config.update((config) => (config.modelConfig = modelConfig));
-            }}
-          />
+          <ListItem title={Locale.Auth.Account}>
+            <div>
+              <input
+                type="text"
+                style={{ width: '300px' }}
+                placeholder={config.account}
+              //   onChange={(e) =>
+              //     updateConfig(
+              //       (config) =>
+              //       (config.account = e.currentTarget.value),
+              //     )
+              //   }
+              ></input>
+            </div>
+          </ListItem>
+
+          <ListItem title={Locale.Auth.Password}>
+            <div>
+              <input
+                type="text"
+                style={{ width: '300px' }}
+                placeholder={config.account}
+                // onChange={(e) =>
+                //   updateConfig(
+                //     (config) =>
+                //     (config.account = e.currentTarget.value),
+                //   )
+                // }
+              ></input>
+            </div>
+          </ListItem>
         </List>
 
         {shouldShowPromptModal && (

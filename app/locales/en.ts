@@ -8,9 +8,11 @@ const en: RequiredLocaleType = {
       "Unauthorized access, please enter access code in [auth](/#/auth) page.",
   },
   Auth: {
-    Title: "Need Access Code",
-    Tips: "Please enter access code below",
+    Title: "Login",
+    Tips: "Please enter your account and password",
     Input: "access code",
+    Account: "account",
+    Password: "password",
     Confirm: "Confirm",
     Later: "Later",
   },
