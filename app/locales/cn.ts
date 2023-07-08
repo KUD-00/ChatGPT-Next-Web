@@ -14,6 +14,7 @@ const cn = {
     Password: "密码",
     Confirm: "确认",
     Later: "稍后再说",
+    Register: "注册",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 条对话`,

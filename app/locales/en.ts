@@ -15,6 +15,7 @@ const en: RequiredLocaleType = {
     Password: "password",
     Confirm: "Confirm",
     Later: "Later",
+    Register: "Register",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} messages`,
