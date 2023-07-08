@@ -15,14 +15,16 @@ export function AuthPage() {
   const navigate = useNavigate();
   const access = useAccessStore();
   const [isRegister, setIsRegister] = useState(false);
-  const accountRef = useRef(null);
-  const passwordRef = useRef(null);
+  const accountRef = useRef<HTMLInputElement | null>(null);
+  const passwordRef = useRef<HTMLInputElement | null>(null);
 
   const goHome = () => navigate(Path.Home);
 
   const handleLoginClick = () => {
-    access.updateAccount(accountRef.current.value);
-    access.updatePassword(passwordRef.current.value);
+    if (accountRef.current && passwordRef.current) {
+      access.updateAccount(accountRef.current.value);
+      access.updatePassword(passwordRef.current.value);
+    }
     goHome();
   };
 

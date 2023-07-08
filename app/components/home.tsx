@@ -2,9 +2,7 @@
 
 require("../polyfill");
 
-import {
-  useAccessStore,
-} from "../store";
+import { useAccessStore } from "../store";
 
 import { useState, useEffect } from "react";
 
@@ -42,9 +40,12 @@ const Settings = dynamic(async () => (await import("./settings")).Settings, {
   loading: () => <Loading noLogo />,
 });
 
-const CustomSettings = dynamic(async () => (await import("./custom-settings")).CustomSettings, {
-  loading: () => <Loading noLogo />,
-});
+const CustomSettings = dynamic(
+  async () => (await import("./custom-settings")).CustomSettings,
+  {
+    loading: () => <Loading noLogo />,
+  },
+);
 
 const Chat = dynamic(async () => (await import("./chat")).Chat, {
   loading: () => <Loading noLogo />,
@@ -55,10 +56,6 @@ const NewChat = dynamic(async () => (await import("./new-chat")).NewChat, {
 });
 
 const MaskPage = dynamic(async () => (await import("./mask")).MaskPage, {
-  loading: () => <Loading noLogo />,
-});
-
-const Register = dynamic(async () => (await import("./register")).Register, {
   loading: () => <Loading noLogo />,
 });
 
@@ -150,7 +147,6 @@ function Screen() {
               <Route path={Path.Chat} element={<Chat />} />
               <Route path={Path.Settings} element={<Settings />} />
               <Route path={Path.CustomSettings} element={<CustomSettings />} />
-              <Route path={Path.Register} element={<Register />} />
             </Routes>
           </div>
         </>
